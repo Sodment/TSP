@@ -11,7 +11,7 @@ public class HighlightMouseOverTile : MonoBehaviour
     private Tilemap highlightMapComponent;
     public Tile changer;
     public Tile highligther;
-    public TileBase prevHigligthed;
+    public Vector3Int prevHigligthedVector;
 
     void Start()
     {
@@ -20,13 +20,14 @@ public class HighlightMouseOverTile : MonoBehaviour
     }
     void Update()
     {
-        if(prevHigligthed != null)
-        {
+        Vector3Int mouseOverPosition = tilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
+        if (prevHigligthedVector != mouseOverPosition)
+        {
+            highlightMapComponent.SetTile(prevHigligthedVector, null);
         }
 
-        Vector3Int mouseOverPosition = tilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        prevHigligthed = highlightMapComponent.GetTile(mouseOverPosition); 
+        prevHigligthedVector = mouseOverPosition; 
         highlightMapComponent.SetTile(mouseOverPosition, highligther);
 
         if (Input.GetMouseButtonDown(0))
