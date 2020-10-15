@@ -20,6 +20,7 @@ public class PlaceCityOnTilemap : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //Debug.Log("Pozycja: " + mouseOverPosition);
+            ListOfCities.instance.CityList.Add(mousePos);
             tileMapComponent.SetTile(mousePos, cityTile);
 
         }

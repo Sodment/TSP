@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Transactions;
 using UnityEngine;
 
 public class BruteFroceTSP : MonoBehaviour
 {
     private List<Vector3Int> cityCopy = new List<Vector3Int>();
     public List<Vector3Int> VisitedCities = new List<Vector3Int>();
-    private Vector3Int currentCity;
+    public Vector3Int currentCity;
+    [SerializeField]
     private Vector3Int nearestCity;
     private int startingCity;
     private int cityCopyLength;
@@ -44,6 +46,7 @@ public class BruteFroceTSP : MonoBehaviour
             VisitedCities.Add(currentCity);
             cityCopy.Remove(currentCity);
             FindNearestCity();
+            currentCity = nearestCity;
         }
 
     }
@@ -56,8 +59,8 @@ public class BruteFroceTSP : MonoBehaviour
             float distanceToCity = Vector3Int.Distance(currentCity, city);
             if (distanceToCity < minDistance)
             {
-                minDistance = distanceToCity;
                 nearestCity = city;
+                minDistance = distanceToCity;
             }
         }
     }
