@@ -17,5 +17,6 @@ public class GameStateMachine : MonoBehaviour
     public void SwitchToState(GameState state)
     {
         currentState = state;
+        Debug.Log("State:" + currentState);
     }
 }

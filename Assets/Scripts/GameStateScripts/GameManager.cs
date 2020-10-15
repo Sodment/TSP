@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
             Destroy(this);
             return;
         }
+
+        gameStateMachine = gameObject.GetComponent<GameStateMachine>();
     }
 
     public void SwitchGameState(GameStateMachine.GameState state)
