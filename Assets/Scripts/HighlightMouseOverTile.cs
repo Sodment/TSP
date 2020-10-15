@@ -5,22 +5,24 @@ using UnityEngine.Tilemaps;
 
 public class HighlightMouseOverTile : MonoBehaviour
 {
-    public Tilemap tilemap;
-    public Tilemap highligthmap;
+    public Tilemap tileMap;
+    public Tilemap highligthMap;
     private Tilemap tileMapComponent;
     private Tilemap highlightMapComponent;
+
     public Tile changer;
     public Tile highligther;
-    public Vector3Int prevHigligthedVector;
+
+    private Vector3Int prevHigligthedVector;
 
     void Start()
     {
-        tileMapComponent = tilemap.GetComponent<Tilemap>();
-        highlightMapComponent = highligthmap.GetComponent<Tilemap>();
+        tileMapComponent = tileMap.GetComponent<Tilemap>();
+        highlightMapComponent = highligthMap.GetComponent<Tilemap>();
     }
     void Update()
     {
-        Vector3Int mouseOverPosition = tilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        Vector3Int mouseOverPosition = tileMap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
         if (prevHigligthedVector != mouseOverPosition)
         {
