@@ -64,5 +64,6 @@ public class BruteFroceTSP : MonoBehaviour
                 minDistance = distanceToCity;
             }
         }
+        ListOfCities.instance.distanceTraveled += Vector3Int.Distance(currentCity, nearestCity);
     }
 }
