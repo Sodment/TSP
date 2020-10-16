@@ -29,7 +29,7 @@ public class BruteFroceTSP : MonoBehaviour
 
     void CopyListOfCities()
     {
-        cityCopy = ListOfCities.instance.CityList;
+        cityCopy = new List<Vector3Int>(ListOfCities.instance.CityList);
     }
 
     void SetVariablesForSimulation()

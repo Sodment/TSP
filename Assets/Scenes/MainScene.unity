@@ -121,6 +121,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &85246695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4832611777642098594, guid: 84c37391881f9c246a14dc6f5842be5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4832611777483867233}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &85246699
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85246695}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7e1ac6715404fb43a9a2108a35c317f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &967535489
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 80, y: 15}
+  m_AnchoredPosition: {x: 104.5, y: 41.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967535491
@@ -264,6 +289,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967535489}
   m_CullTransparentMesh: 0
+--- !u!20 &1006847648 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 614471330370188039, guid: 8b4ded3dd26b7454381d0ca83c853a76,
+    type: 3}
+  m_PrefabInstance: {fileID: 614471330004585336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085369842
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +474,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'NextState
+
+'
 --- !u!222 &1571799421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -604,7 +637,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1006847648}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -711,6 +744,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4085425793331443446, guid: f7ddaea3d10a68347a61c34f33bf4bad,
+        type: 3}
+      propertyPath: highlightEnabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4085425795157729740, guid: f7ddaea3d10a68347a61c34f33bf4bad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -839,6 +877,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832611777642098597, guid: 84c37391881f9c246a14dc6f5842be5b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -220215899414316367, guid: 699721eb572dab8429dca8fbe9434b9c,
+        type: 3}
+    - target: {fileID: 4832611777642098597, guid: 84c37391881f9c246a14dc6f5842be5b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832611777642098597, guid: 84c37391881f9c246a14dc6f5842be5b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832611777642098597, guid: 84c37391881f9c246a14dc6f5842be5b,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832611777642098597, guid: 84c37391881f9c246a14dc6f5842be5b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c37391881f9c246a14dc6f5842be5b, type: 3}

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -13,20 +12,38 @@ public class HighlightMouseOverTile : MonoBehaviour
     private Vector3Int mousePos;
     private Vector3Int prevHigligthedVector;
 
+    public bool highlightEnabled = false;
+
     void Start()
     {
+        GameManager.instance.SwitchingToGraphSetting.AddListener(SwitchHiglither);
+        GameManager.instance.QuittingGraphSetting.AddListener(SwitchHiglither);
+        GameManager.instance.QuittingGraphSetting.AddListener(DeleteLastHighligther);
         highlightMapComponent = highligthMap.GetComponent<Tilemap>();
     }
     void Update()
     {
-        mousePos = MouseOverPosition.instance.mouseOverPosition;
-        if (prevHigligthedVector != mousePos)
+        if (highlightEnabled)
         {
-            highlightMapComponent.SetTile(prevHigligthedVector, null);
-        }
+            mousePos = MouseOverPosition.instance.mouseOverPosition;
+            if (prevHigligthedVector != mousePos)
+            {
+                highlightMapComponent.SetTile(prevHigligthedVector, null);
+            }
 
-        prevHigligthedVector = mousePos; 
-        highlightMapComponent.SetTile(mousePos, highligther);
+            prevHigligthedVector = mousePos;
+            highlightMapComponent.SetTile(mousePos, highligther);
+        }
+    }
+
+    void SwitchHiglither()
+    {
+        highlightEnabled = !highlightEnabled;
+    }
+
+    void DeleteLastHighligther()
+    {
+        highlightMapComponent.SetTile(prevHigligthedVector, null);
     }
 }
 

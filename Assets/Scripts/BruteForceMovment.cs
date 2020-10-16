@@ -28,7 +28,7 @@ public class BruteForceMovment : MonoBehaviour
     }
     void SetPath()
     {
-        path = intelligence.VisitedCities;
+        path = new List<Vector3Int>(intelligence.VisitedCities);
     }
 
     void SetFirstLocation()

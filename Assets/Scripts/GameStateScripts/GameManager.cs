@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         GameStateMachine.GameState lastState = gameStateMachine.currentState;
         gameStateMachine.SwitchToState(state);
 
-        switch (state)
+        switch (lastState)
         {
             case GameStateMachine.GameState.UIMainView:
                 QuittingUIMainView.Invoke();
