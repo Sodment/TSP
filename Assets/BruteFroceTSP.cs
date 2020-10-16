@@ -35,6 +35,7 @@ public class BruteFroceTSP : MonoBehaviour
     void SetVariablesForSimulation()
     {
         cityCopyLength = cityCopy.Count;
+        //startingCity = 0;
         startingCity = Random.Range(0, cityCopyLength);
         currentCity = cityCopy[startingCity];
     }
