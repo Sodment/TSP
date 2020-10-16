@@ -10,8 +10,8 @@ public class BruteForceMovment : MonoBehaviour
 
     void Start()
     {
-        GameManager.instance.SwitchingToSimulating.AddListener(SetFirstLocation);
         GameManager.instance.SwitchingToSimulating.AddListener(SetPath);
+        GameManager.instance.SwitchingToSimulating.AddListener(SetFirstLocation);
     }
 
     void Update()
@@ -33,6 +33,6 @@ public class BruteForceMovment : MonoBehaviour
 
     void SetFirstLocation()
     {
-        bruteEnforcer.transform.position = intelligence.currentCity;
+        bruteEnforcer.transform.position = ListOfCities.instance.CityList[intelligence.startingCity];
     }
 }

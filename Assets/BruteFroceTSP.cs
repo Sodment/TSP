@@ -11,7 +11,7 @@ public class BruteFroceTSP : MonoBehaviour
     public Vector3Int currentCity;
     [SerializeField]
     private Vector3Int nearestCity;
-    private int startingCity;
+    public int startingCity;
     private int cityCopyLength;
 
     void Start()
