@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
 public class BruteForceMovment : MonoBehaviour
 {
     public BruteFroceTSP intelligence;
