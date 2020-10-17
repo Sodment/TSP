@@ -3,54 +3,41 @@ using UnityEngine;
 public class BruteForceMovment : MonoBehaviour
 {
     public BruteFroceTSP intelligence;
-    public List<Vector3Int> path = new List<Vector3Int>();
+    public List<Vector3Int> path;
+    public TrailRenderer trailRenderer;
     public GameObject bruteEnforcer;
+    private Animator animator;
     private float speed = 5f;
-    private Vector3Int startingCity;
-    [SerializeField]
-    private bool run;
+    private int currentCityindex = 0;
 
     void Start()
     {
-        
-        GameManager.instance.SwitchingToSimulating.AddListener(SetPath);
-        GameManager.instance.SwitchingToSimulating.AddListener(SwitchRunning);
-        GameManager.instance.SwitchingToSimulating.AddListener(SetFirstLocation);
-        GameManager.instance.QuittingSimulating.AddListener(SwitchRunning);
+        GameManager.instance.QuittingGraphSetting.AddListener(SetPath);
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (run)
+        float step = speed * Time.deltaTime;
+        if (path.Count > 0 && transform.position == path[currentCityindex] && currentCityindex < path.Count - 1)
         {
-            float step = speed * Time.deltaTime;
-            if (path.Count > 0 && transform.position == path[0])
-            {
-                path.Remove(path[0]);
-            }
-            if (path.Count > 0)
-            {
-                bruteEnforcer.transform.position = Vector3.MoveTowards(transform.position, path[0], step);
-            }
-            if (path.Count == 0)
-            {
-                bruteEnforcer.transform.position = Vector3.MoveTowards(transform.position, startingCity, step);
-            }
+            currentCityindex++;
+        }
+        if (currentCityindex < path.Count)
+        {
+            animator.SetBool("Idle", false);
+            bruteEnforcer.transform.position = Vector3.MoveTowards(transform.position, path[currentCityindex], step);
+            transform.localScale = new Vector3(Mathf.Sign(path[currentCityindex].x - transform.position.x), 1, 1);
+        }
+        if(path.Count > 0 && bruteEnforcer.transform.position == path[0])
+        {
+            animator.SetBool("Idle", true);
         }
     }
     void SetPath()
     {
         path = new List<Vector3Int>(intelligence.VisitedCities);
-    }
-
-    void SetFirstLocation()
-    {
-        startingCity = ListOfCities.instance.CityList[intelligence.startingCity];
-        bruteEnforcer.transform.position = startingCity;
-    }
-
-    void SwitchRunning()
-    {
-        run = !run;
+        bruteEnforcer.transform.position = path[0];
+        trailRenderer.Clear();
     }
 }

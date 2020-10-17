@@ -244,7 +244,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435317699}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bca7393b0483a24fb445b37c5b68902, type: 3}
   m_Name: 
@@ -398,8 +398,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intelligence: {fileID: 1126797632}
   path: []
+  trailRenderer: {fileID: 85246700}
   bruteEnforcer: {fileID: 435317699}
-  run: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,7 +3759,7 @@ Tilemap:
       - {fileID: -4332266923935097626, guid: b9c465fa1dff2294faa19dee0e9e802e, type: 3}
       - {fileID: -1181524954787056670, guid: b9c465fa1dff2294faa19dee0e9e802e, type: 3}
       - {fileID: 3415037744127001720, guid: b9c465fa1dff2294faa19dee0e9e802e, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: -6, z: 0}
@@ -3799,7 +3799,7 @@ Tilemap:
       - {fileID: -4332266923935097626, guid: b9c465fa1dff2294faa19dee0e9e802e, type: 3}
       - {fileID: -1181524954787056670, guid: b9c465fa1dff2294faa19dee0e9e802e, type: 3}
       - {fileID: 3415037744127001720, guid: b9c465fa1dff2294faa19dee0e9e802e, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -3, y: 6, z: 0}
@@ -4053,7 +4053,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VisitedCities: []
   currentCity: {x: 0, y: 0, z: 0}
-  nearestCity: {x: 0, y: 0, z: 0}
   startingCity: 0
 --- !u!1 &1185849282
 GameObject:

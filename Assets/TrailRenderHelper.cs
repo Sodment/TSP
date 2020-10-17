@@ -10,6 +10,5 @@ public class TrailRenderHelper : MonoBehaviour
     {
         trail.sortingLayerName = "Background";
         trail.sortingOrder = 2;
-
     }
 }
