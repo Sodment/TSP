@@ -12,6 +12,7 @@ public class CityGenerator : MonoBehaviour
     public void GenerateListOfCities()
     {
         int i = 0;
+        List <Vector3Int> tmpList = new List<Vector3Int>();
         while(i < numberOfCities)
         {
             Vector3Int vector = new Vector3Int
@@ -20,13 +21,8 @@ public class CityGenerator : MonoBehaviour
                 y = Random.Range(-24, 25),
                 z = 0
             };
-            if (tilemap.GetTile(vector) != cityTile)
-            {
-                ListOfCities.instance.CityList.Add(vector);
-                //Debug.Log(vector);
-                tilemap.SetTile(vector, cityTile);
-                i++;
-            }
+            if(!tmpList.Contains(vector)) { tmpList.Add(vector); i++; }
         }
+        ListOfCities.instance.CityList = tmpList;
     }
 }
