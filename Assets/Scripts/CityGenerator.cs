@@ -20,9 +20,10 @@ public class CityGenerator : MonoBehaviour
                 y = Random.Range(-24, 25),
                 z = 0
             };
-            if(tilemap.GetTile(vector) != cityTile)
+            if (tilemap.GetTile(vector) != cityTile)
             {
                 ListOfCities.instance.CityList.Add(vector);
+                //Debug.Log(vector);
                 tilemap.SetTile(vector, cityTile);
                 i++;
             }
