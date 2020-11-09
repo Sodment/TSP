@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 926302191}
   cityTile: {fileID: 11400000, guid: 39b9020a6659f9c49900149b67daaad7, type: 2}
-  numberOfCities: 50
+  numberOfCities: 60
 --- !u!1 &2002741083
 GameObject:
   m_ObjectHideFlags: 0

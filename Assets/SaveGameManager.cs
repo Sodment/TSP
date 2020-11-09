@@ -9,8 +9,9 @@ public class SaveGameManager : MonoBehaviour
 {
     [SerializeField]
     private ListOfCities dataHolder;
+    Encoding encoding = new UTF8Encoding(false);
 
-   public bool IsSaveFile()
+    public bool IsSaveFile()
     {
         return Directory.Exists(Application.persistentDataPath + "/save_game");
     }
@@ -50,7 +51,7 @@ public class SaveGameManager : MonoBehaviour
             Directory.CreateDirectory(Application.persistentDataPath + "/save_game");
         }
         FileStream file = new FileStream(Application.persistentDataPath + "/save_game/TSPdata.txt", FileMode.OpenOrCreate);
-        using(StreamWriter writer = new StreamWriter(file, Encoding.UTF8))
+        using(StreamWriter writer = new StreamWriter(file, encoding))
         {
             string numberofCities = ListOfCities.instance.CityList.Count.ToString();
             writer.WriteLine(numberofCities);
@@ -73,7 +74,7 @@ public class SaveGameManager : MonoBehaviour
         {
             List<Vector3Int> tmpList = new List<Vector3Int>();
             FileStream file = new FileStream(Application.persistentDataPath + "/save_game/TSPdata.txt", FileMode.Open);
-            using(StreamReader reader = new StreamReader(file, Encoding.UTF8))
+            using(StreamReader reader = new StreamReader(file, encoding))
             {
                 string firstline = reader.ReadLine();
                 int count = Int32.Parse(firstline);
