@@ -1,23 +1,15 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using UnityEngine;
-using UnityEngine.XR.WSA.Input;
 
 public class SaveGameManager : MonoBehaviour
 {
     [SerializeField]
     private ListOfCities dataHolder;
 
-   private void Start()
-    {
-       
-    }
    public bool IsSaveFile()
     {
         return Directory.Exists(Application.persistentDataPath + "/save_game");
@@ -62,9 +54,10 @@ public class SaveGameManager : MonoBehaviour
         {
             string numberofCities = ListOfCities.instance.CityList.Count.ToString();
             writer.WriteLine(numberofCities);
+            int i = 0;
             foreach (Vector3Int vector in ListOfCities.instance.CityList)
             {
-                writer.WriteLine(vector.x.ToString() + " " + vector.y.ToString());
+                writer.WriteLine(++i +" " + vector.x.ToString() + " " + vector.y.ToString());
             }
         }
         file.Close();
@@ -86,12 +79,12 @@ public class SaveGameManager : MonoBehaviour
                 int count = Int32.Parse(firstline);
                 for (int i = 0; i < count; i++)
                 {
-                    _ = new string[2];
+                    _ = new string[3];
                     string[] line = reader.ReadLine().Split(' ');
                     Vector3Int vector = new Vector3Int
                     {
-                        x = Int32.Parse(line[0]),
-                        y = Int32.Parse(line[1]),
+                        x = Int32.Parse(line[1]),
+                        y = Int32.Parse(line[2]),
                         z = 0
                     };
                     tmpList.Add(vector);
