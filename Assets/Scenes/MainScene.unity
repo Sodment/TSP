@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 926302191}
   cityTile: {fileID: 11400000, guid: 39b9020a6659f9c49900149b67daaad7, type: 2}
-  numberOfCities: 100
+  numberOfCities: 50
 --- !u!1 &2002741083
 GameObject:
   m_ObjectHideFlags: 0
@@ -4862,6 +4862,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BruteEnforcer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763218485288054051, guid: 84c37391881f9c246a14dc6f5842be5b,
+        type: 3}
+      propertyPath: m_Time
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c37391881f9c246a14dc6f5842be5b, type: 3}
