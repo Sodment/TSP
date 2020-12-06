@@ -7,7 +7,7 @@ public class ListOfCities : MonoBehaviour
 {
     public static ListOfCities instance;
     public List<Vector3Int> CityList = new List<Vector3Int>();
-    public float distanceTraveled;
+    public double distanceTraveled;
 
     void Awake()
     {
