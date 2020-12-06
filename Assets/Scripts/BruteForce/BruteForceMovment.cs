@@ -7,7 +7,7 @@ public class BruteForceMovment : MonoBehaviour
     public TrailRenderer trailRenderer;
     public GameObject bruteEnforcer;
     private Animator animator;
-    private float speed = 200f;
+    private float speed = 20f;
     private int currentCityindex = 0;
 
     void Start()
