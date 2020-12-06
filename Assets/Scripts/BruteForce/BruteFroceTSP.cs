@@ -5,7 +5,7 @@ public class BruteFroceTSP : MonoBehaviour
 {
     private List<Vector3Int> cityCopy;
     public List<Vector3Int> VisitedCities = new List<Vector3Int>();
-    public Vector3Int currentCity;
+    public Vector3Int currentCity = Vector3Int.zero;
     private Vector3Int nearestCity;
     public int startingCity;
     private int cityCopyLength;
@@ -26,7 +26,7 @@ public class BruteFroceTSP : MonoBehaviour
     void SetVariablesForSimulation()
     {
         cityCopyLength = cityCopy.Count;
-        startingCity = Random.Range(0, cityCopyLength);
+        startingCity = 0; //Random.Range(0, cityCopyLength);
         currentCity = ListOfCities.instance.CityList[startingCity];
     }
 
@@ -34,6 +34,7 @@ public class BruteFroceTSP : MonoBehaviour
     {
         for (int i = 0; i < cityCopyLength; i++)
         {
+            //Debug.Log(ListOfCities.instance.CityList.IndexOf(currentCity));
             VisitedCities.Add(currentCity);
             cityCopy.Remove(currentCity);
             FindNearestCity();
@@ -54,6 +55,6 @@ public class BruteFroceTSP : MonoBehaviour
                 minDistance = distanceToCity;
             }
         }
-        ListOfCities.instance.distanceTraveled += Vector3Int.Distance(currentCity, nearestCity);
+        ListOfCities.instance.distanceTraveled += Vector3Int.Distance(currentCity, nearestCity); //(currentCity - nearestCity).magnitude;
     }
 }

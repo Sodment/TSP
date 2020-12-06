@@ -17,8 +17,8 @@ public class CityGenerator : MonoBehaviour
         {
             Vector3Int vector = new Vector3Int
             {
-                x = Random.Range(-25, 25),
-                y = Random.Range(-24, 25),
+                x = Random.Range(0, 100),
+                y = Random.Range(0, 100),
                 z = 0
             };
             if(!tmpList.Contains(vector)) { tmpList.Add(vector); i++; }
