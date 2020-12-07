@@ -66,7 +66,7 @@ public class GeneticAlgorithm : MonoBehaviour
 
     public List<Vector3Int> Crossover(List<Vector3Int> parent_a, List<Vector3Int> parent_b)
     {
-        int cut_point = Mathf.FloorToInt(cityCopy.Count * 0.5f);
+        int cut_point = Mathf.RoundToInt(cityCopy.Count * 0.5f);
         List<Vector3Int> child = new List<Vector3Int>(cityCopy.Count);
         for (int i = 0; i < cut_point; i++)
         {
@@ -184,9 +184,11 @@ public class GeneticAlgorithm : MonoBehaviour
         PrintList(population[0].genome);
         Debug.Log(population[0].fitness);
         //Debug.Log(population[0].genome.Count);
-        for (int i = 0; i < 2000; i++)
+        for (int i = 0; i < 1000; i++)
         {
             NextGenerataion();
+            Debug.Log(population[0].fitness);
+
         }
         PrintList(population[0].genome);
         Debug.Log(population[0].fitness);
