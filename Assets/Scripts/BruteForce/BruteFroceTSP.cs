@@ -15,7 +15,6 @@ public class BruteFroceTSP : MonoBehaviour
         GameManager.instance.SwitchingToSimulating.AddListener(CopyListOfCities);
         GameManager.instance.SwitchingToSimulating.AddListener(SetVariablesForSimulation);
         GameManager.instance.SwitchingToSimulating.AddListener(Path);
-
     }
 
     void CopyListOfCities()
@@ -34,8 +33,8 @@ public class BruteFroceTSP : MonoBehaviour
     {
         for (int i = 0; i < cityCopyLength; i++)
         {
-            Debug.Log("Brute enforcer path: ");
-            Debug.Log(ListOfCities.instance.CityList.IndexOf(currentCity));
+            //Debug.Log("Brute enforcer path: ");
+            //Debug.Log(ListOfCities.instance.CityList.IndexOf(currentCity));
             VisitedCities.Add(currentCity);
             cityCopy.Remove(currentCity);
             FindNearestCity();
@@ -68,4 +67,6 @@ public class BruteFroceTSP : MonoBehaviour
         }
         return distance;
     }
+
+
 }

@@ -1063,7 +1063,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1602784667}
-        m_MethodName: GenerateFirstGenome
+        m_MethodName: CreateFirstPopulation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9f0d61bd5aa544981234ae7f857936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  populationSize: 0
+  populationSize: 5
 --- !u!4 &1602784668
 Transform:
   m_ObjectHideFlags: 0
@@ -1463,7 +1463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 926302191}
   cityTile: {fileID: 11400000, guid: 39b9020a6659f9c49900149b67daaad7, type: 2}
-  numberOfCities: 2
+  numberOfCities: 10
 --- !u!1 &2002741083
 GameObject:
   m_ObjectHideFlags: 0
